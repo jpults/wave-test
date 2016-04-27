@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>My Wave</title>
+    <script type="text/javascript" src="waves.js"></script>
+     <style type="text/css">
+         canvas {
+          background-color: black;
+          }
+          </style>
+        <script>
+          var canvas = null;
+          var waves = null;
+          function loadCanvas( ) {
+            canvas = document.getElementById( 'canvas' );
+            console.log(canvas);
+            waves = new Waves( canvas,660,417 );
+            setInterval( "run()", 80 );   }
+          function run(){
+            waves.update( );
+            waves.draw( );         }
+          window.addEventListener( 'load', loadCanvas, false );     </script>
+
+  </head>
+<body> <canvas id="canvas" width="660" height="417"></canvas> </body>
+
+
+
+</html> - See more at: http://anthonydillon.com/blog/canvas-wave/#sthash.qpgARxgt.dpuf
