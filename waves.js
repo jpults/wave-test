@@ -12,9 +12,8 @@ function Wave($canvas, $y, $colour) {
     this.count += 0.05;
   }
   this.draw = function() {
-    this.ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-    this.ctx.fillRect(0,0,Waves.width,Waves.height);
-    this.ctx.fillStyle = "rgba("+$colour+", "+this.alpha+")";
+    this.ctx.clearRect(0, 0, Waves.width,Waves.height);
+    this.ctx.fillStyle = "rgba("+$colour+", "+200+")";
     this.ctx.beginPath();
     this.ctx.moveTo(0, this.y);
     this.ctx.quadraticCurveTo(Waves.width / 4, this.y + ( this.wavePower * this.force ), Waves.width / 2, this.y);
@@ -35,7 +34,7 @@ function Waves($canvas, $width, $height) {
   Waves.globalY = 200;
   this.move = .01;
   this.ctx = $canvas.getContext( '2d' );
-  this.colour = Math.round(Math.random()*10)+", "+Math.round(Math.random()*10 + 30)+", "+Math.round(Math.random()*55 + 200);
+  this.colour = Math.round(Math.random()*10)+", "+Math.round(Math.random()*10 + 30)+", "+255;
   this.wavesArray = new Array();
   this.beginingY = Waves.height / 4;
   while(this.numberOfWaves--){
